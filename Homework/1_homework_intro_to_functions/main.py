@@ -38,6 +38,8 @@ def main() -> None:
 
     print()
 
+    ## all functions are forced to return an integer.
+
     ## display the results of the four basic arithmetic operations
     print(f"The sum of the two numbers is: {sum(first_user_number, second_user_number)}")
     print(f"The difference of the two numbers is: {sub(first_user_number, second_user_number)}")
