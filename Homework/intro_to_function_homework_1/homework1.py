@@ -69,7 +69,7 @@ def mul(first_number:typing.Union[int, float], second_number:typing.Union[int, f
 
 ##-------------------start-of-div()--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-def div(first_number:typing.Union[int, float], second_number:typing.Union[int, float]) -> float:
+def div(first_number:typing.Union[int, float], second_number:typing.Union[int, float]) -> int:
 
     """
     
@@ -80,7 +80,7 @@ def div(first_number:typing.Union[int, float], second_number:typing.Union[int, f
     second_number (int | float): The second number to be divided.
 
     Returns:
-    float: The division of the two numbers.
+    int: The division of the two numbers.
 
     """
     
