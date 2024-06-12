@@ -87,4 +87,4 @@ def div(first_number:typing.Union[int, float], second_number:typing.Union[int, f
     first_number = int(first_number)
     second_number = int(second_number)
 
-    return first_number / second_number
+    return int(first_number / second_number)
