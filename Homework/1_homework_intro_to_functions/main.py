@@ -1,3 +1,8 @@
+## Kaden Bilyeu
+## 2024-06-12
+## Homework 1: Introduction to Functions
+## CS 3080-001
+
 ## Greetings Grader, my name is Kaden. I've been coding in python for a while, and I typically document my code with docstrings, and use extensive type hints. 
 ## I hope you enjoy grading my code, and you have a great day!
 
