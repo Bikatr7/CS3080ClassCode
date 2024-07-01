@@ -7,7 +7,7 @@
 def main():
 
 ## assuming the file is in the same directory as the script
-## the working directory must be in-class/3_proof_of_file_io for this to work
+## the working directory must be in-class/3_proof_of_file_io for this to work in my case
 ## and that the file is named 'csv_file.csv'
 ## will upload the file to the assignment as well
 
