@@ -1,3 +1,9 @@
+## Kaden Bilyeu
+## 2024-06-26
+## In-Class 2: Proof of List
+## CS 3080-001
+## main.py
+
 ## built-in libraries
 import typing
 

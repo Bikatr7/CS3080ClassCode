@@ -1,3 +1,9 @@
+## Kaden Bilyeu
+## 2024-06-12
+## Homework 1: Introduction to Functions
+## CS 3080-001
+## homework1.py
+
 ## built-in libraries
 import typing
 

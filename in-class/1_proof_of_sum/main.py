@@ -1,3 +1,9 @@
+## Kaden Bilyeu
+## 2024-06-12
+## In-Class 1: Proof of Sum
+## CS 3080-001
+## main.py
+
 ## built-in libraries
 import typing
 
