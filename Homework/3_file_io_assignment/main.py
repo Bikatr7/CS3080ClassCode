@@ -30,15 +30,25 @@ def main():
 
     contents = []
 
-    with open('csv_file.csv', 'r') as file:
-        for line in file:
-            print(line)
-            contents.append(line)
+    try:
 
-    os.mkdir('To Process')
+        with open('csv_file.csv', 'r') as file:
+            for line in file:
+                print(line)
+                contents.append(line)
+
+    except FileNotFoundError:
+        print('File not found')
+        exit(1)
+
+    if(not os.path.exists('To Process')):
+        os.mkdir('To Process')
+
     os.chdir('To Process')
 
-    os.mkdir('Work Copy')
+    if(not os.path.exists('Work Copy')):
+        os.mkdir('Work Copy')
+
     os.chdir('Work Copy')
 
     with open('copy_Content.txt', 'w') as file:
