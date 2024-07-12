@@ -46,3 +46,10 @@ This allows to train a model for easy classification of spam emails.
 ## Approach
 
 We're going to train a neural network to classify spam emails.
+
+## Setup (Assuming vs code)
+
+1.  Open the CS3080ClassCode folder in VS Code
+2.  cd into the project folder assuming you are in the CS3080ClassCode folder (cd project)
+3.  run `pip install -r requirements.txt`
+4.  run `python neural_network_with_3p_libraries.py` to run the neural network with 3rd party libraries

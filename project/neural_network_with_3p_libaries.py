@@ -9,8 +9,8 @@ from keras.src.layers import Dense
 from keras.src.utils import to_categorical
 
 ## Load the data from "csv" files
-data_path = 'data/spambase.data'
-names_path = 'data/spambase.names'
+data_path = r'data/spambase.data'
+names_path = r'data/spambase.names'
 
 ## read the data, contains column names and some documentation
 with open(names_path, 'r') as f:
