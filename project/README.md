@@ -47,7 +47,11 @@ This allows to train a model for easy classification of spam emails.
 
 ## Approach
 
-We're going to train a neural network to classify spam emails.
+We are going to use a neural network algorithm to determine if an email is spam or not. As of our
+current plan. The network will consist of multiple layers: an input layer that receives the
+attributes as features, two hidden layers with ReLu activation functions, and an output layer a
+with a soft max activation function for binary classification. The model will be trained using
+categorical cross-entropy loss using Keras.
 
 ## Setup (Assuming vs code)
 
