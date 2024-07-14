@@ -26,4 +26,16 @@ data = pd.read_csv(data_path, header=None, names=column_names)
 ## x is about 57 features that measure attributes of the email
 ## y is the label, 1 if spam, 0 if not spam
 X = data.iloc[:, :-1].values
-y = data.iloc[:, -1].values   
+y = data.iloc[:, -1].values
+
+## Split the data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+## Standardize the data kinda?
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+## Make the labels categorical
+y_train = to_categorical(y_train)
+y_test = to_categorical(y_test)

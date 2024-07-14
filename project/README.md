@@ -41,6 +41,8 @@ Extrapolate this to AI, sure we can get the correct answer but who interprets th
 
 4601 emails, with 1813 spam emails (39.4%). The data set has 58 features, 57 of them for identifying spam emails and 1 for the label.
 
+We are lucky to have data that has NO MISSING VALUES. Which is rare in the real world.
+
 This allows to train a model for easy classification of spam emails.
 
 ## Approach
