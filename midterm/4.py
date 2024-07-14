@@ -12,7 +12,7 @@
 ## built-in libraries
 import math
 
-def cylinder_area(radius:float, height:float):
+def q4_cylinder_area(radius:float, height:float) -> float:
     area = 2 * math.pi * radius * height + 2 * math.pi * radius**2
 
     ## floats get icky with precision, so we'll round to 3 decimal places out of habit
@@ -21,6 +21,6 @@ def cylinder_area(radius:float, height:float):
 radius = float(input("Enter the radius of the cylinder: "))
 height = float(input("Enter the height of the cylinder: "))
 
-area = cylinder_area(radius, height)
+area = q4_cylinder_area(radius, height)
 
 print(f"The area of the cylinder is: {area}")
