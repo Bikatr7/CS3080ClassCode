@@ -10,6 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+WSGI_APPLICATION = 'TokenAuth.wsgi.application'
+ASGI_APPLICATION = 'TokenAuth.routing.application'
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND":
+      "channels.layers.InMemoryChannelLayer",
+    }
+}
+
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
