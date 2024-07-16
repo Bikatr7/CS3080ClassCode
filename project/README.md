@@ -57,5 +57,5 @@ categorical cross-entropy loss using Keras.
 
 1.  Open the CS3080ClassCode folder in VS Code
 2.  cd into the project folder assuming you are in the CS3080ClassCode folder (cd project)
-3.  run `pip install -r requirements.txt`
+3.  run `pip install -r requirements.txt` (if not done already) to install the required libraries
 4.  run `python neural_network_with_3p_libraries.py` to run the neural network with 3rd party libraries
