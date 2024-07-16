@@ -1,3 +1,11 @@
+## Kaden Bilyeu
+## Alexis Liew
+## Oleander Coyne
+## CS 3080-001
+## Final Project
+## 2024-07-10
+## neural_network_with_3p_libaries.py
+
 ## built-in libraries
 import os
 
