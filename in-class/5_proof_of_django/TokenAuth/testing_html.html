@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Token Auth</title>
+    </head>
+    <body>
+        <input type ="text" name = "username" id = "form_username" /><br>
+        <input type = "text" name = "password" id = "form_password" /><br> 
+        <button onclick = "loginViaBackend()"> Login </button>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            function createSocket(token) {
+                ws_path = "ws://localhost:8000/?token="+token ; 
+                socket = new WebSocket(ws_path) ; 
+
+                socket.onopen = function(e) {
+                    console.log("Connected") ; 
+                    socket.send(
+                        JSON.stringify(
+                            {
+                                "command" : "Say hello !" , 
+                                "data_string" : "This is the data string !" , 
+                            }
+                        )
+                    ) ;
+                }
+                
+                socket.onclose = function(e) {
+                    console.log(e) ; 
+                }
+                
+                socket.onmessage = function(data) {
+                    data = JSON.parse(data.data) ; 
+                    console.log(data) ; 
+                    console.log(data["command_response"])
+                }
+            }
+
+            function loginViaBackend() {
+                console.log("The function was run !") ; 
+                var username = document.getElementById("form_username").value ; 
+                var password = document.getElementById("form_password").value ; 
+                
+                console.log(username) ; 
+                console.log(password) ; 
+
+                payload = {
+                    "username" : username ,
+                    "password" : password , 
+                }
+                
+                $.ajax(
+                    {
+                        "type": "POST" , 
+                        "dataType" : "json" ,
+                        "url" : "http://localhost:8000/api/login/" ,
+                        "timeout" : 5000 , 
+                        "data" : payload , 
+                        "success" : function(data) {
+                            console.log(data) ; 
+                            token = data["token"] ; 
+                            createSocket(token) ; 
+                        },
+                        "error" : function(data) {
+                            console.log(data) ; 
+                        }
+                    }
+                ) ;
+            }
+        </script>
+    </body>
+</html>
