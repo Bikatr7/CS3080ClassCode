@@ -11,6 +11,7 @@
 ## third-party libraries
 import numpy as np
 import pandas as pd
+
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
@@ -64,4 +65,28 @@ input_size = X_train.shape[1]
 hidden_size = 128
 output_size = 2
 learning_rate = 0.001 
-epochs = 50
+epochs = 25
+
+## We have trained the model, now we can evaluate it
+hidden_input = np.dot(X_test, weights_input_hidden)
+hidden_output = sigmoid(hidden_input)
+
+final_input = np.dot(hidden_output, weights_hidden_output)
+final_output = sigmoid(final_input)
+
+## Predict the class labels
+y_pred = np.argmax(final_output, axis=1)
+y_true = np.argmax(y_test, axis=1)
+
+## Calculate the evaluation metrics
+accuracy_nn = accuracy_score(y_true, y_pred)
+precision_nn = precision_score(y_true, y_pred)
+recall_nn = recall_score(y_true, y_pred)
+f1_nn = f1_score(y_true, y_pred)
+
+## Show the evaluation metrics
+print("Neural Network Model Evaluation:")
+print(f"Accuracy: {accuracy_nn}")
+print(f"Precision: {precision_nn}")
+print(f"Recall: {recall_nn}")
+print(f"F1-Score: {f1_nn}")
