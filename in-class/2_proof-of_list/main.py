@@ -24,7 +24,7 @@ def is_integer(value:str) -> typing.Tuple[typing.Union[int, str], bool]:
     """
 
     try:
-        value = int(value)
+        value = int(value) # type: ignore
         return value, True
     
     except ValueError:
@@ -49,8 +49,8 @@ def main():
         
         if(is_int):
 
-            user_list[user_list.index(value)] = user_list_value
-
+            user_list[user_list.index(value)] = user_list_value # type: ignore
+ 
             print(f"{user_list_value} is an integer.")
 
 main()
