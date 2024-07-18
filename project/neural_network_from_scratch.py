@@ -11,7 +11,6 @@
 ## third-party libraries
 import numpy as np
 import pandas as pd
-
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
@@ -67,8 +66,36 @@ output_size = 2
 learning_rate = 0.001 
 epochs = 25
 
-## We have trained the model, now we can evaluate it
-hidden_input = np.dot(X_test, weights_input_hidden)
+## Randomly initialize the weights
+np.random.seed(42)
+weights_input_hidden = np.random.rand(input_size, hidden_size) - 0.5
+weights_hidden_output = np.random.rand(hidden_size, output_size) - 0.5
+
+## Training the neural network by hand
+for epoch in range(epochs):
+    ## Forward pass (input -> output)
+    hidden_input = np.dot(X_train, weights_input_hidden)
+    hidden_output = sigmoid(hidden_input)
+
+    final_input = np.dot(hidden_output, weights_hidden_output)
+    final_output = sigmoid(final_input)
+
+    ## Calculate error (difference between predicted and actual)
+    error = y_train - final_output
+    if(epoch + 1) % 5 == 0:
+        print(f'Epoch {epoch + 1}/{epochs}, Error: {np.mean(np.abs(error))}')
+
+    ## Perform Backpropagation (output -> input) basically a backwards pass
+    delta_output = error * sigmoid_derivative(final_output)
+    error_hidden_layer = delta_output.dot(weights_hidden_output.T)
+    delta_hidden_layer = error_hidden_layer * sigmoid_derivative(hidden_output)
+
+    ## Update the weights using gradient descent
+    weights_hidden_output += hidden_output.T.dot(delta_output) * learning_rate
+    weights_input_hidden += X_train.T.dot(delta_hidden_layer) * learning_rate
+
+## We have trained the model, now we can evaluate it 
+hidden_input = np.dot(X_test, weights_input_hidden) # type: ignore
 hidden_output = sigmoid(hidden_input)
 
 final_input = np.dot(hidden_output, weights_hidden_output)
