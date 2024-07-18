@@ -6,7 +6,7 @@
 ## 2024-07-17
 ## neural_network_from_scratch.py
 
-## Basically without keras or tensorflow
+## Basically without keras or tensorflow, numpy, pandas, and scikit-learn are used for data structures, data manipulation, and evaluation metrics. But the neural network is built from scratch.
 
 ## third-party libraries
 import numpy as np
@@ -117,3 +117,36 @@ print(f"Accuracy: {accuracy_nn}")
 print(f"Precision: {precision_nn}")
 print(f"Recall: {recall_nn}")
 print(f"F1-Score: {f1_nn}")
+
+## notes that while testing
+## 1 epoch gave 69.1% accuracy
+## 15 epochs gave 88.0% accuracy
+## 25 epochs gave 90.7% accuracy
+## 50 epochs gave 92.8% accuracy
+## 75 epochs gave 93.2% accuracy
+## 100 epochs gave 93.5% accuracy
+## 150 epochs gave 93.8% accuracy
+
+## it appears that less database iteration leads to underfitting. Sweet spot appears to be 25-50 epochs once again
+## Deviations of <- -/+ 2% can be observed likely due ot the nature of the neural network being built from scratch
+
+## Unlike the keras model, the neural network from scratch is less accurate but still performs well. Something of note is that overfitting doesn't appear to happen. As epochs increase, the accuracy and F1-Score increase as well.
+## However if I had to guess this probably still a symptom of overfitting, and would perform poorly on new data.
+## 25 epochs should work well for this model.
+
+## Results can vary for 25 epochs but generally this will lead to:
+
+## Accuracy: 90%
+## Precision: ~92%
+## Recall: ~85%
+## F1-Score: ~88%
+
+## typically with a deviation of +/- 1% in some runs
+
+## Notes:
+
+## The from scratch neural network is quite a bit less accurate than the keras model, but still performs well.
+
+## An accuracy of 90% is still quite good, but the keras model is more accurate. The same applies to the precision, recall, and F1-Score.
+
+## The same conclusions can be drawn from the from scratch model as the keras model. The sweet spot for epochs is 25-50, and the model is likely overfitting as epochs increase.
