@@ -1,5 +1,11 @@
 ## Project
 
+### Authors
+
+- Kaden Bilyeu
+- Alexis Liew
+- Oleander Coyne
+
 ## Description
 
 For this project, either work with a partner or by yourself.
@@ -59,3 +65,22 @@ categorical cross-entropy loss using Keras.
 2.  cd into the project folder assuming you are in the CS3080ClassCode folder (cd project)
 3.  run `pip install -r requirements.txt` (if not done already) to install the required libraries
 4.  run `python neural_network_with_3p_libraries.py` to run the neural network with 3rd party libraries
+5.  run `python neural_network_from_scratch.py` to run the neural network from scratch
+
+
+## Submission
+
+This zip file contains several files/directories:
+
+1. README.md - this file
+2. neural_network_with_3p_libraries.py - the python file that runs the neural network with 3rd party libraries (Keras)
+3. neural_network_from_scratch.py - the python file that runs the neural network from scratch
+4. data/ - the directory containing the data from spambase
+5. models/ - a trained model from the neural network with 3rd party libraries
+6. requirements.txt - the file containing the required libraries
+7. proposal.pdf - the proposal for the project
+8. conclusion.pdf - the conclusion for the project
+
+Both python files are extensively documented and should be easy to follow. Conclusions and comparisons are made in-between each.
+
+The proposal and conclusion largely take info from both python files, and this README.md file and turn it into a more readable format.
